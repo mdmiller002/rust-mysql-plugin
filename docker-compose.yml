@@ -1,0 +1,8 @@
+version: '2.2'
+services:
+  dev:
+    build: ./docker
+    volumes:
+      - "./src:/src"
+    environment:
+      - "MYSQL_ALLOW_EMPTY_PASSWORD=true"
