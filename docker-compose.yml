@@ -1,8 +1,9 @@
 version: '2.2'
 services:
   dev:
+    container_name: dev
     build: ./docker
     volumes:
-      - "./src:/src"
+      - "./:/code"
     environment:
       - "MYSQL_ALLOW_EMPTY_PASSWORD=true"
