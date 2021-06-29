@@ -5,7 +5,7 @@
 #include <mysql/plugin_auth.h>
 
 // rust function declarations
-extern int validate_password(const char *password);
+extern int validate_password(const char *username, const char *password);
 
 /**
  * auth_simple_server is the authentication main function. This function
@@ -21,7 +21,7 @@ static int auth_simple_server(MYSQL_PLUGIN_VIO *vio, MYSQL_SERVER_AUTH_INFO *inf
   }
 
   // fail on empty password
-  if (!pkt_len || validate_password(pkt) != 0) {
+  if (!pkt_len || validate_password(info->user_name, pkt) != 0) {
     info->password_used = PASSWORD_USED_NO;
     return CR_ERROR;
   }
@@ -78,7 +78,7 @@ int set_salt(const char* password __attribute__((unused)),
 static struct st_mysql_auth auth_simple_handler = 
 {
   MYSQL_AUTHENTICATION_INTERFACE_VERSION,
-  NULL,
+  "mysql_clear_password",
   auth_simple_server,
   generate_auth_string_hash,
   validate_auth_string_hash,

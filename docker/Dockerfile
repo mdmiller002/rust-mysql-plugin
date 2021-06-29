@@ -13,4 +13,6 @@ RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
 
 RUN mkdir /code
 
+ENV LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN Y
+
 CMD ["mysqld"]
