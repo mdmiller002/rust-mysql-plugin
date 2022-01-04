@@ -95,7 +95,7 @@ mysql_declare_plugin(auth_simple)
   MYSQL_AUTHENTICATION_PLUGIN,
   &auth_simple_handler,
   "auth_simple",
-  "Appian",
+  "auth",
   "Authentication in rust",
   PLUGIN_LICENSE_GPL,
   NULL,

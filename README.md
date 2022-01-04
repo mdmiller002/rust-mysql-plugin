@@ -18,7 +18,10 @@ Docker and Docker Compose are necessary to deploy this plugin locally, with the 
 To use the plugin:
 1. Create a new user with the auth plugin
    
-   `mysql> CREATE USER a IDENTIFIED WITH auth_simple;`
+   ```
+   $ mysql
+   mysql> CREATE USER a IDENTIFIED WITH auth_simple;
+   ```
 2. Log in with this user, and any non-zero length password
 
     `$ mysql -u a -p"abc" --enable-cleartext-plugin`
