@@ -1,5 +1,5 @@
 # rust-mysql-plugin
-A proof-of-concept of a MySQL plugin in Rust
+A proof-of-concept MySQL plugin written in Rust
 
 This repository contains a simple authentication plugin for MySQL written in Rust. The plugin simply checks that a non-zero length password is
 provided for the user authenticating with the plugin.
