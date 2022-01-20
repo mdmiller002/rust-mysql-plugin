@@ -3,6 +3,7 @@ services:
   dev:
     container_name: dev
     build: ./docker
+    platform: 'linux/x86_64'
     volumes:
       - "./:/code"
     environment:
